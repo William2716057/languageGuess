@@ -5,13 +5,15 @@ window.onload = function () {
 var videoLinks = [
     "https://www.youtube.com/watch?v=Vbpr0ryoroA",
     "https://www.youtube.com/watch?v=HHjmbeH7iM8",
-    "https://www.youtube.com/watch?v=qJVY25bli80"
+    "https://www.youtube.com/watch?v=qJVY25bli80",
+    "https://www.youtube.com/watch?v=N4RMhrlk60E"
 ];
 
 var languageNames = [
     "Estonian",
     "Macedonian",
-    "Catalan"
+    "Catalan",
+    "Basque"
 ];
 
 var currentLanguageIndex = 0;
@@ -51,5 +53,5 @@ function updateButtonLabel(languageName, index) {
 }
 
 function showAlert() {
-    alert("You lose");
+    alert("You Lose!");
 }

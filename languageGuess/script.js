@@ -2,15 +2,26 @@ window.onload = function () {
     loadRandomVideo();
 };
 
+var videoLinks = [
+    "https://www.youtube.com/watch?v=Vbpr0ryoroA",
+    "https://www.youtube.com/watch?v=HHjmbeH7iM8",
+    "https://www.youtube.com/watch?v=qJVY25bli80"
+];
+
+var languageNames = [
+    "Estonian",
+    "Macedonian",
+    "Catalan"
+];
+
+var currentLanguageIndex = 0;
+
 function loadRandomVideo() {
-    var videoLinks = [
-        "https://www.youtube.com/watch?v=Vbpr0ryoroA",
-        "https://www.youtube.com/watch?v=HHjmbeH7iM8",
-        "https://www.youtube.com/watch?v=qJVY25bli80"
-    ];
     var randomIndex = Math.floor(Math.random() * videoLinks.length);
     var randomLink = videoLinks[randomIndex];
     loadVideo(randomLink);
+    updateButtonLabel(languageNames[randomIndex]); // Update button text with language at the same index as the video
+    currentLanguageIndex = randomIndex;
 }
 
 function loadVideo(videoLink) {
@@ -32,4 +43,9 @@ function extractVideoId(url) {
     var regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     var match = url.match(regExp);
     return match && match[1];
+}
+
+function updateButtonLabel(languageName, index) {
+    var loadButton = document.getElementById("loadButton");
+    loadButton.textContent = languageName;
 }

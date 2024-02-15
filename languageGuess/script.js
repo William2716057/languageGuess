@@ -1,5 +1,19 @@
-function loadVideo() {
-    var videoLink = document.getElementById("video-link").value;
+window.onload = function () {
+    loadRandomVideo();
+};
+
+function loadRandomVideo() {
+    var videoLinks = [
+        "https://www.youtube.com/watch?v=Vbpr0ryoroA",
+        "https://www.youtube.com/watch?v=HHjmbeH7iM8",
+        "https://www.youtube.com/watch?v=qJVY25bli80"
+    ];
+    var randomIndex = Math.floor(Math.random() * videoLinks.length);
+    var randomLink = videoLinks[randomIndex];
+    loadVideo(randomLink);
+}
+
+function loadVideo(videoLink) {
     var videoId = extractVideoId(videoLink);
     if (videoId) {
         var embedUrl = "https://www.youtube.com/embed/" + videoId;

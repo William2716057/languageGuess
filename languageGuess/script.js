@@ -49,3 +49,7 @@ function updateButtonLabel(languageName, index) {
     var loadButton = document.getElementById("loadButton");
     loadButton.textContent = languageName;
 }
+
+function showAlert() {
+    alert("You lose");
+}

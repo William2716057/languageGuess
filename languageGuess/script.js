@@ -37,7 +37,7 @@ function loadVideo(videoLink) {
         document.getElementById("video-container").innerHTML = "";
         document.getElementById("video-container").appendChild(iframe);
     } else {
-        alert("Invalid YouTube video link!");
+        alert("Invalid YouTube video link!");//will try another if not found
     }
 }
 
@@ -51,7 +51,7 @@ function updateButtonLabel(languageName, index) {
     var loadButton = document.getElementById("loadButton");
     loadButton.textContent = languageName;
 }
-
+//change here
 function showAlert() {
     alert("You Lose!");
 }

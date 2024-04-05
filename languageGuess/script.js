@@ -20,13 +20,37 @@ var languageNames = [
 
 var currentLanguageIndex = 0;
 
+//function loadRandomVideo() {
+//    var randomIndex = Math.floor(Math.random() * videoLinks.length);
+//    var randomLink = videoLinks[randomIndex];
+ //   loadVideo(randomLink);
+ //   updateButtonLabel(languageNames[randomIndex]); // Update button text with language at the same index as the video
+ //   currentLanguageIndex = randomIndex;
+//}
+
 function loadRandomVideo() {
     var randomIndex = Math.floor(Math.random() * videoLinks.length);
     var randomLink = videoLinks[randomIndex];
     loadVideo(randomLink);
-    updateButtonLabel(languageNames[randomIndex]); // Update button text with language at the same index as the video
+    updateButtonLabel(languageNames[randomIndex]);
     currentLanguageIndex = randomIndex;
 }
+
+function refreshPage() {
+    location.reload();
+}
+
+// Get all buttons by their IDs
+var buttons = document.querySelectorAll('#button1, #button2, #button3, #button4');
+
+// Choose a random button index
+var randomButtonIndex = Math.floor(Math.random() * buttons.length);
+
+// Assign the loadRandomVideo function to the chosen button's onclick event
+buttons[randomButtonIndex].onclick = function () {
+    loadRandomVideo();
+    refreshPage(); // Refresh the page after clicking the correct button
+};
 
 function loadVideo(videoLink) {
     var videoId = extractVideoId(videoLink);

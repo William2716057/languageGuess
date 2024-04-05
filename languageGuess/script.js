@@ -1,6 +1,8 @@
+
 window.onload = function () {
     loadRandomVideo();
 };
+
 
 var videoLinks = [
     "https://www.youtube.com/watch?v=Vbpr0ryoroA",
@@ -55,3 +57,22 @@ function updateButtonLabel(languageName, index) {
 function showAlert() {
     alert("You Lose!");
 }
+
+
+// Define the loadRandomVideo function
+//function loadRandomVideo() {
+ //   var randomIndex = Math.floor(Math.random() * videoLinks.length);
+ //   var randomLink = videoLinks[randomIndex];
+  //  loadVideo(randomLink);
+ //   updateButtonLabel(languageNames[randomIndex]);
+ //   currentLanguageIndex = randomIndex;
+//}
+
+// Get all buttons by their IDs
+//var buttons = document.querySelectorAll('#button1, #button2, #button3, #button4');
+
+// Choose a random button index
+//var randomButtonIndex = Math.floor(Math.random() * buttons.length);
+
+// Assign the loadRandomVideo function to the chosen button's onclick event
+//buttons[randomButtonIndex].onclick = loadRandomVideo;

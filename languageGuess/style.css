@@ -1,3 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
 .container {
     max-width: 900px;
     margin: 50px auto;
@@ -18,11 +24,12 @@
         height: 100%;
     }
 
-.form-container {
-    margin-top: 20px;
-}
-
 button {
     margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
+
 

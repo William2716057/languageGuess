@@ -1,8 +1,6 @@
-
 window.onload = function () {
     loadRandomVideo();
 };
-
 
 var videoLinks = [
     "https://www.youtube.com/watch?v=Vbpr0ryoroA",
@@ -20,37 +18,13 @@ var languageNames = [
 
 var currentLanguageIndex = 0;
 
-//function loadRandomVideo() {
-//    var randomIndex = Math.floor(Math.random() * videoLinks.length);
-//    var randomLink = videoLinks[randomIndex];
- //   loadVideo(randomLink);
- //   updateButtonLabel(languageNames[randomIndex]); // Update button text with language at the same index as the video
- //   currentLanguageIndex = randomIndex;
-//}
-
 function loadRandomVideo() {
     var randomIndex = Math.floor(Math.random() * videoLinks.length);
     var randomLink = videoLinks[randomIndex];
     loadVideo(randomLink);
-    updateButtonLabel(languageNames[randomIndex]);
+    setButtonLabels(randomIndex);
     currentLanguageIndex = randomIndex;
 }
-
-function refreshPage() {
-    location.reload();
-}
-
-// Get all buttons by their IDs
-var buttons = document.querySelectorAll('#button1, #button2, #button3, #button4');
-
-// Choose a random button index
-var randomButtonIndex = Math.floor(Math.random() * buttons.length);
-
-// Assign the loadRandomVideo function to the chosen button's onclick event
-buttons[randomButtonIndex].onclick = function () {
-    loadRandomVideo();
-    refreshPage(); // Refresh the page after clicking the correct button
-};
 
 function loadVideo(videoLink) {
     var videoId = extractVideoId(videoLink);
@@ -63,7 +37,7 @@ function loadVideo(videoLink) {
         document.getElementById("video-container").innerHTML = "";
         document.getElementById("video-container").appendChild(iframe);
     } else {
-        alert("Invalid YouTube video link!");//will try another if not found
+        alert("Invalid YouTube video link!");
     }
 }
 
@@ -73,30 +47,34 @@ function extractVideoId(url) {
     return match && match[1];
 }
 
-function updateButtonLabel(languageName, index) {
-    var loadButton = document.getElementById("loadButton");
-    loadButton.textContent = languageName;
+function setButtonLabels(correctIndex) {
+    var buttons = document.querySelectorAll('#button1, #button2, #button3, #button4');
+    var labels = [...languageNames];
+    var correctLabel = labels.splice(correctIndex, 1)[0];
+
+    // Shuffle the remaining labels
+    for (let i = labels.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [labels[i], labels[j]] = [labels[j], labels[i]];
+    }
+
+    // Choose a random button to be the correct one
+    var correctButtonIndex = Math.floor(Math.random() * buttons.length);
+    buttons.forEach((button, index) => {
+        if (index === correctButtonIndex) {
+            button.textContent = correctLabel;
+            button.onclick = function () {
+                loadRandomVideo();
+            };
+        } else {
+            button.textContent = labels.pop();
+            button.onclick = function () {
+                showAlert();
+            };
+        }
+    });
 }
-//change here
+
 function showAlert() {
-    alert("You Lose!");
+    alert("Try again!");
 }
-
-
-// Define the loadRandomVideo function
-//function loadRandomVideo() {
- //   var randomIndex = Math.floor(Math.random() * videoLinks.length);
- //   var randomLink = videoLinks[randomIndex];
-  //  loadVideo(randomLink);
- //   updateButtonLabel(languageNames[randomIndex]);
- //   currentLanguageIndex = randomIndex;
-//}
-
-// Get all buttons by their IDs
-//var buttons = document.querySelectorAll('#button1, #button2, #button3, #button4');
-
-// Choose a random button index
-//var randomButtonIndex = Math.floor(Math.random() * buttons.length);
-
-// Assign the loadRandomVideo function to the chosen button's onclick event
-//buttons[randomButtonIndex].onclick = loadRandomVideo;

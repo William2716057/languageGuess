@@ -6,14 +6,16 @@ var videoLinks = [
     "https://www.youtube.com/watch?v=Vbpr0ryoroA",
     "https://www.youtube.com/watch?v=HHjmbeH7iM8",
     "https://www.youtube.com/watch?v=qJVY25bli80",
-    "https://www.youtube.com/watch?v=N4RMhrlk60E"
+    "https://www.youtube.com/watch?v=N4RMhrlk60E",
+    "https://www.youtube.com/watch?v=M82TbP5Gan4"
 ];
 
 var languageNames = [
     "Estonian",
     "Macedonian",
     "Catalan",
-    "Basque"
+    "Basque",
+    "Mazanderani"
 ];
 
 var currentLanguageIndex = 0;
@@ -48,7 +50,7 @@ function extractVideoId(url) {
 }
 
 function setButtonLabels(correctIndex) {
-    var buttons = document.querySelectorAll('#button1, #button2, #button3, #button4');
+    var buttons = document.querySelectorAll('button');
     var labels = [...languageNames];
     var correctLabel = labels.splice(correctIndex, 1)[0];
 
@@ -61,20 +63,18 @@ function setButtonLabels(correctIndex) {
     // Choose a random button to be the correct one
     var correctButtonIndex = Math.floor(Math.random() * buttons.length);
     buttons.forEach((button, index) => {
+        button.classList.remove('correct', 'incorrect'); // Reset button colors
         if (index === correctButtonIndex) {
             button.textContent = correctLabel;
             button.onclick = function () {
-                loadRandomVideo();
+                button.classList.add('correct');
+                setTimeout(loadRandomVideo, 1000); // Load a new video after 1 second
             };
         } else {
             button.textContent = labels.pop();
             button.onclick = function () {
-                showAlert();
+                button.classList.add('incorrect');
             };
         }
     });
-}
-
-function showAlert() {
-    alert("Try again!");
 }

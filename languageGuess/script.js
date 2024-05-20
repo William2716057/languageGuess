@@ -1,3 +1,4 @@
+
 window.onload = function () {
     loadRandomVideo();
 };
@@ -7,7 +8,12 @@ var videoLinks = [
     "https://www.youtube.com/watch?v=HHjmbeH7iM8",
     "https://www.youtube.com/watch?v=qJVY25bli80",
     "https://www.youtube.com/watch?v=N4RMhrlk60E",
-    "https://www.youtube.com/watch?v=M82TbP5Gan4"
+    "https://www.youtube.com/watch?v=M82TbP5Gan4",
+    "https://www.youtube.com/watch?v=QKV3eHkFAZY",
+    "https://www.youtube.com/watch?v=MxT0CDSPHLA",
+    "https://www.youtube.com/watch?v=lUxWRnCCMZA",
+    "https://www.youtube.com/watch?v=QGksmoZoZzU",
+    "https://www.youtube.com/watch?v=7S19heRcLb8"
 ];
 
 var languageNames = [
@@ -15,7 +21,12 @@ var languageNames = [
     "Macedonian",
     "Catalan",
     "Basque",
-    "Mazanderani"
+    "Mazanderani",
+    "Korean",
+    "French",
+    "Swedish",
+    "Indonesion",
+    "Welsh"
 ];
 
 var currentLanguageIndex = 0;
@@ -68,7 +79,7 @@ function setButtonLabels(correctIndex) {
             button.textContent = correctLabel;
             button.onclick = function () {
                 button.classList.add('correct');
-                setTimeout(loadRandomVideo, 1000); // Load a new video after 1 second
+                setTimeout(loadRandomVideo, 1000); // Load new video after 1 second
             };
         } else {
             button.textContent = labels.pop();

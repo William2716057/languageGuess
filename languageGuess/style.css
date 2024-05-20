@@ -30,6 +30,22 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
+
+    button:hover {
+        background-color: darkblue;
+    }
+
+    button.correct {
+        background-color: green;
+    }
+
+    button.incorrect {
+        background-color: red;
+    }
 
 

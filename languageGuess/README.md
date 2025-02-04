@@ -18,7 +18,7 @@ This is a simple language guessing game where users watch a YouTube video and tr
 
 1. Clone this repository:
 
-2. git clone https://github.com/yourusername/language-guessing-game.git
+2. git clone https://github.com/William2716057/languageGuess.git
 
 3. Navigate to the project folder:
 ```

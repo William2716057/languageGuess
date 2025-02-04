@@ -1,5 +1,7 @@
 # Language Guesser
 
+![Screenshot 2024-05-21 113027](https://github.com/William2716057/languageGuess/assets/77903649/c6825e6e-876b-457c-bcb7-211ef7333b7a)
+
 ## Overview
 
 This is a simple language guessing game where users watch a YouTube video and try to guess which language is being spoken. The game presents four options, and the user must choose the correct one. If the correct language is selected, the button turns green, and a new video loads after a short delay. Incorrect choices turn red.
@@ -60,5 +62,3 @@ cd /path/to/file
 
 - Provide hints or fun facts about the languages.
 
-
-![Screenshot 2024-05-21 113027](https://github.com/William2716057/languageGuess/assets/77903649/c6825e6e-876b-457c-bcb7-211ef7333b7a)

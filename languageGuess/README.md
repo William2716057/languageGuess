@@ -14,19 +14,19 @@ This is a simple language guessing game where users watch a YouTube video and tr
 
 - Uses embedded YouTube videos for an interactive experience.
 
-Installation
+### Installation
 
-Clone this repository:
+1. Clone this repository:
 
-git clone https://github.com/yourusername/language-guessing-game.git
+2. git clone https://github.com/yourusername/language-guessing-game.git
 
-Navigate to the project folder:
+3. Navigate to the project folder:
+```
+cd /path/to/file
+```
+4. Open index.html in a web browser to play the game.
 
-cd language-guessing-game
-
-Open index.html in a web browser to play the game.
-
-File Structure
+### File Structure
 
 index.html - Main game interface.
 
